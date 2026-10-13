@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Список покупок</string>
+
+    <!-- Экраны -->
+    <string name="title_lists">Мои списки</string>
+    <string name="title_quick_add">Быстрый набор</string>
+    <string name="title_suggest">Что взять ещё</string>
+
+    <!-- Обучающий вход -->
+    <string name="onboarding_skip">Пропустить</string>
+    <string name="onboarding_next">Далее</string>
+    <string name="onboarding_start">Начать</string>
+    <string name="onboard_lists_title">Списки покупок</string>
+    <string name="onboard_lists_text">Создавайте отдельные списки и отмечайте, что уже куплено. Всё сохраняется на устройстве.</string>
+    <string name="onboard_wheel_title">Быстрый набор — крутилка</string>
+    <string name="onboard_wheel_text">Крутите колесо по зонам магазина и одним касанием добавляйте товары из каталога.</string>
+    <string name="onboard_share_title">Поделитесь списком</string>
+    <string name="onboard_share_text">Отправьте готовый список близкому в мессенджер или на почту — одним нажатием он превратится в аккуратный текст.</string>
+
+    <!-- Списки покупок -->
+    <string name="new_list">Новый список</string>
+    <string name="create_list_title">Новый список покупок</string>
+    <string name="list_name_hint">Например: Продукты на неделю</string>
+    <string name="create">Создать</string>
+    <string name="cancel">Отмена</string>
+    <string name="delete">Удалить</string>
+    <string name="rename">Переименовать</string>
+    <string name="share">Поделиться</string>
+    <string name="list_actions">Действия со списком</string>
+    <string name="delete_list_title">Удалить список?</string>
+    <string name="delete_list_message">«%1$s» будет удалён вместе со всеми товарами.</string>
+    <string name="empty_lists">Пока нет ни одного списка.\nНажмите «Новый список», чтобы создать первый.</string>
+    <string name="default_list_name">Список покупок</string>
+
+    <plurals name="items_count">
+        <item quantity="one">%d товар</item>
+        <item quantity="few">%d товара</item>
+        <item quantity="many">%d товаров</item>
+        <item quantity="other">%d товара</item>
+    </plurals>
+    <string name="list_subtitle">%1$s · куплено %2$d · %3$s</string>
+    <string name="list_subtitle_empty">Список пуст · %1$s</string>
+
+    <!-- Содержимое списка -->
+    <string name="progress_bought">Куплено %1$d из %2$d</string>
+    <string name="clear_bought">Убрать купленные</string>
+    <string name="clear_bought_done">Убрано купленных: %1$d</string>
+    <string name="empty_items">Список пуст.\nДобавьте товар внизу или откройте крутилку.</string>
+    <string name="item_hint">Что купить?</string>
+    <string name="add">Добавить</string>
+    <string name="quick_add">Крутилка</string>
+    <string name="removed">Удалено</string>
+    <string name="undo">Вернуть</string>
+
+    <!-- Поделиться списком -->
+    <string name="share_list_chooser">Отправить список</string>
+    <string name="share_header">🛒 Список «%1$s»</string>
+    <string name="share_progress">Куплено %1$d из %2$d</string>
+    <string name="share_bought">✅ %1$s</string>
+    <string name="share_todo">⬜ %1$s</string>
+    <string name="share_empty_suffix">\nСписок пока пуст</string>
+
+    <!-- Быстрый набор -->
+    <string name="back">Назад</string>
+    <string name="done">Готово</string>
+    <string name="hint_choose_zone">Крутите колесо или коснитесь сектора — выберите зону</string>
+    <string name="hint_choose_subcategory">Теперь выберите, что именно нужно</string>
+    <string name="hint_choose_product">Каждое касание сразу добавляет товар в список</string>
+    <string name="added_counter">Добавлено: %1$d</string>
+    <string name="already_in_list">«%1$s» уже в списке</string>
+    <string name="added_label">Добавлено</string>
+    <string name="breadcrumb">%1$s › %2$s</string>
+
+    <!-- Товары из прошлых покупок -->
+    <string name="suggest_title">Взять из прошлых покупок?</string>
+    <string name="suggest_subtitle">Отметьте товары, которые покупали раньше — они добавятся в «%1$s»</string>
+    <string name="suggest_empty">Прошлых покупок пока нет — соберём подсказки после первого списка.</string>
+    <string name="select_all">Выбрать все</string>
+    <string name="deselect_all">Снять выбор</string>
+    <string name="suggest_add">Добавить (%1$d)</string>
+    <string name="skip">Пропустить</string>
+    <string name="used_times">×%1$d</string>
+</resources>

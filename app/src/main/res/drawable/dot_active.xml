@@ -1,0 +1,11 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="12dp"
+    android:height="12dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Активная точка индикатора онбординга -->
+    <path
+        android:fillColor="@android:color/white"
+        android:pathData="M12,6A6,6 0 1 1 12,18A6,6 0 1 1 12,6Z" />
+</vector>

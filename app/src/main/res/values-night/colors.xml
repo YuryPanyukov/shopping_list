@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Крутилка -->
+    <color name="wheel_track">#33FFFFFF</color>
+    <color name="wheel_hub">#FF2A2A2E</color>
+    <color name="wheel_hub_stroke">#33FFFFFF</color>
+    <color name="wheel_text">#FFE6E1E5</color>
+    <color name="wheel_pointer">#FFE6E1E5</color>
+</resources>

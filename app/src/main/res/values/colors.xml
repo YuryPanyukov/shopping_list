@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Фирменная палитра (сид #2FA36B — зелёный иконки запуска). -->
+    <!-- Светлая схема -->
+    <color name="brand_primary_light">#FF1F6C4A</color>
+    <color name="brand_on_primary_light">#FFFFFFFF</color>
+    <color name="brand_primary_container_light">#FFA6F2CE</color>
+    <color name="brand_on_primary_container_light">#FF002115</color>
+    <color name="brand_secondary_light">#FF4F6357</color>
+    <color name="brand_on_secondary_light">#FFFFFFFF</color>
+    <color name="brand_secondary_container_light">#FFD1E8DA</color>
+    <color name="brand_on_secondary_container_light">#FF0C1F16</color>
+    <color name="brand_tertiary_light">#FF3C6473</color>
+    <color name="brand_on_tertiary_light">#FFFFFFFF</color>
+    <color name="brand_tertiary_container_light">#FFC1E8FB</color>
+    <color name="brand_on_tertiary_container_light">#FF001F2A</color>
+    <color name="brand_error_light">#FFBA1A1A</color>
+    <color name="brand_on_error_light">#FFFFFFFF</color>
+    <color name="brand_error_container_light">#FFFFDAD6</color>
+    <color name="brand_on_error_container_light">#FF410002</color>
+
+    <!-- Тёмная схема -->
+    <color name="brand_primary_dark">#FF8BD5B0</color>
+    <color name="brand_on_primary_dark">#FF003827</color>
+    <color name="brand_primary_container_dark">#FF005238</color>
+    <color name="brand_on_primary_container_dark">#FFA6F2CE</color>
+    <color name="brand_secondary_dark">#FFB5CCC0</color>
+    <color name="brand_on_secondary_dark">#FF213529</color>
+    <color name="brand_secondary_container_dark">#FF374B3F</color>
+    <color name="brand_on_secondary_container_dark">#FFD1E8DA</color>
+    <color name="brand_tertiary_dark">#FFA4CDDE</color>
+    <color name="brand_on_tertiary_dark">#FF0F1F28</color>
+    <color name="brand_tertiary_container_dark">#FF334B58</color>
+    <color name="brand_on_tertiary_container_dark">#FFC1E8FB</color>
+    <color name="brand_error_dark">#FFFFB4AB</color>
+    <color name="brand_on_error_dark">#FF690005</color>
+    <color name="brand_error_container_dark">#FF93000A</color>
+    <color name="brand_on_error_container_dark">#FFFFDAD6</color>
+
+    <!-- Крутилка -->
+    <color name="wheel_track">#1A000000</color>
+    <color name="wheel_hub">#FFFDFCFF</color>
+    <color name="wheel_hub_stroke">#22000000</color>
+    <color name="wheel_text">#FF1C1B1F</color>
+    <color name="wheel_pointer">#FF1C1B1F</color>
+</resources>

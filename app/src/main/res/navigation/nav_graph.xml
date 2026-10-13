@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/listsFragment">
+
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="code_sys.shopping_list.ui.OnboardingFragment"
+        android:label="@string/app_name"
+        tools:layout="@layout/fragment_onboarding" />
+
+    <fragment
+        android:id="@+id/listsFragment"
+        android:name="code_sys.shopping_list.ui.ListsFragment"
+        android:label="@string/title_lists"
+        tools:layout="@layout/fragment_lists">
+
+        <action
+            android:id="@+id/action_lists_to_detail"
+            app:destination="@id/listDetailFragment" />
+
+        <action
+            android:id="@+id/action_lists_to_suggest"
+            app:destination="@id/suggestItemsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/listDetailFragment"
+        android:name="code_sys.shopping_list.ui.ListDetailFragment"
+        android:label="@string/title_lists"
+        tools:layout="@layout/fragment_list_detail">
+
+        <action
+            android:id="@+id/action_detail_to_quick_add"
+            app:destination="@id/quickAddFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/quickAddFragment"
+        android:name="code_sys.shopping_list.ui.QuickAddFragment"
+        android:label="@string/title_quick_add"
+        tools:layout="@layout/fragment_quick_add" />
+
+    <fragment
+        android:id="@+id/suggestItemsFragment"
+        android:name="code_sys.shopping_list.ui.SuggestItemsFragment"
+        android:label="@string/title_suggest"
+        tools:layout="@layout/fragment_suggest_items">
+
+        <action
+            android:id="@+id/action_suggest_to_detail"
+            app:destination="@id/listDetailFragment"
+            app:popUpTo="@id/listsFragment" />
+    </fragment>
+
+
+</navigation>

@@ -1,0 +1,26 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="?attr/colorControlNormal">
+
+    <!-- Список с отметками: чеклист -->
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2"
+        android:pathData="M8.5,4.5A1.5,1.5 0 1 1 7,6A1.5,1.5 0 0 1 8.5,4.5Z" />
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2"
+        android:pathData="M8.5,10.5A1.5,1.5 0 1 1 7,12A1.5,1.5 0 0 1 8.5,10.5Z" />
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2"
+        android:pathData="M8.5,16.5A1.5,1.5 0 1 1 7,18A1.5,1.5 0 0 1 8.5,16.5Z" />
+    <path
+        android:strokeColor="@android:color/white"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:pathData="M12,6 L19,6 M12,12 L19,12 M12,18 L19,18" />
+</vector>
