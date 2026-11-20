@@ -11,7 +11,6 @@ data class Category(val name: String, val emoji: String, val color: Int, val sub
 
 /**
  * Справочник частых товаров для быстрого набора.
- * Задача — не охватить всё, а дать 8–10 ходовых позиций на подкатегорию.
  * Чистый Kotlin (без Android) — покрыт JVM-тестами.
  */
 object ProductCatalog {
@@ -23,22 +22,22 @@ object ProductCatalog {
 
     /** Палитра для второго уровня крутилки (подкатегории). */
     val dialPalette = intArrayOf(
-        0xFFE5523B.toInt(),
-        0xFFEF8B2C.toInt(),
-        0xFFD9A514.toInt(),
-        0xFF43A047.toInt(),
-        0xFF1E9E8F.toInt(),
-        0xFF2E7FD9.toInt(),
-        0xFF5C6BC0.toInt(),
-        0xFF7E57C2.toInt(),
-        0xFFC2185B.toInt()
+        0xFF7B9CFF.toInt(),
+        0xFF6C8CFF.toInt(),
+        0xFF38D6C4.toInt(),
+        0xFF4FB3FF.toInt(),
+        0xFFB98CFF.toInt(),
+        0xFF8A5CF6.toInt(),
+        0xFFF5A623.toInt(),
+        0xFFFF8A8A.toInt(),
+        0xFF3DDC97.toInt()
     )
 
     val categories: List<Category> = listOf(
         Category(
             name = FOOD,
             emoji = "🍽",
-            color = 0xFFE5523B.toInt(),
+            color = 0xFF6C9CFF.toInt(),
             subcategories = listOf(
                 Subcategory(
                     "Мясо", "🥩", listOf(
@@ -139,7 +138,7 @@ object ProductCatalog {
         Category(
             name = HOUSEHOLD,
             emoji = "🧴",
-            color = 0xFF2E7FD9.toInt(),
+            color = 0xFF38D6C4.toInt(),
             subcategories = listOf(
                 Subcategory(
                     "Стирка", "🧺", listOf(
@@ -215,7 +214,7 @@ object ProductCatalog {
         Category(
             name = STATIONERY,
             emoji = "✏️",
-            color = 0xFF2FA36B.toInt(),
+            color = 0xFFF5A623.toInt(),
             subcategories = listOf(
                 Subcategory(
                     "Ручки", "✏️", listOf(
@@ -286,7 +285,7 @@ object ProductCatalog {
         Category(
             name = OTHER,
             emoji = "📦",
-            color = 0xFF7E57C2.toInt(),
+            color = 0xFFB98CFF.toInt(),
             subcategories = listOf(
                 Subcategory(
                     "Гигиена", "🧼", listOf(

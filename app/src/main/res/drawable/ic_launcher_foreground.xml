@@ -7,22 +7,22 @@
 
     <!-- Ручка корзины -->
     <path
+        android:pathData="M42,53 C42,40 66,40 66,53"
         android:strokeColor="#FFFFFF"
-        android:strokeWidth="4.5"
         android:strokeLineCap="round"
-        android:pathData="M42,52 C42,39 66,39 66,52" />
+        android:strokeWidth="4.5" />
 
-    <!-- Корпус корзины (сужается вниз, скруглённые низ) -->
+    <!-- Корпус корзины -->
     <path
         android:fillColor="#FFFFFF"
         android:fillType="nonZero"
-        android:pathData="M30.5,53 L77.5,53 A3,3 0 0 1 77.45,53.6 L73.6,74.8 A6,6 0 0 1 67.7,79.5 L40.3,79.5 A6,6 0 0 1 34.4,74.8 L30.55,53.6 A3,3 0 0 1 30.5,53 Z" />
+        android:pathData="M30.5,53 L77.5,53 L69.6,78.2 A4,4 0 0 1 65.8,81 L42.2,81 A4,4 0 0 1 38.4,78.2 Z" />
 
     <!-- Отметка «куплено» внутри корзины -->
     <path
-        android:strokeColor="#FF1B7D4E"
-        android:strokeWidth="5"
+        android:pathData="M43.2,65 L50.8,72.6 L65.5,57.5"
+        android:strokeColor="#FF1B2A4A"
         android:strokeLineCap="round"
         android:strokeLineJoin="round"
-        android:pathData="M44,62 L51.5,69.5 L64,56.5" />
+        android:strokeWidth="5.2" />
 </vector>

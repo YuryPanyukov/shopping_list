@@ -174,6 +174,8 @@ class RotaryWheelView @JvmOverloads constructor(
 
             sectorPaint.color = segment.color
             sectorPaint.alpha = if (isPreview) 255 else 110
+            // На приглушённом секторе читается белый, на активном — контрастный.
+            sectorLabelPaint.color = if (isPreview) readableOn(segment.color) else 0xFFFFFFFF.toInt()
             sectorPaint.strokeWidth = if (isPreview) bandWidth else bandWidth * 0.76f
             val radius = if (isPreview) midRadius else midRadius + bandWidth * 0.05f
             arcRect.set(centerX - radius, centerY - radius, centerX + radius, centerY + radius)
@@ -387,6 +389,14 @@ class RotaryWheelView @JvmOverloads constructor(
         if (d < 0f) d += 360f
         return d
     }
+
+    /** Тёмный текст на светлом секторе, белый — на насыщенном. */
+    private fun readableOn(color: Int): Int =
+        if (androidx.core.graphics.ColorUtils.calculateLuminance(color) > 0.45f) {
+            0xFF101828.toInt()
+        } else {
+            0xFFFFFFFF.toInt()
+        }
 
     private fun lineHeight(paint: Paint): Float = paint.fontMetrics.let { it.descent - it.ascent }
 

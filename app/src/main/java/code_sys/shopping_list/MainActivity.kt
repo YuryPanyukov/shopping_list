@@ -3,7 +3,6 @@ package code_sys.shopping_list
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.color.DynamicColors
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
@@ -26,10 +25,6 @@ class MainActivity : AppCompatActivity() {
         enableEdgeToEdge()
 
         ShoppingRepository.init(applicationContext)
-
-        // Material You: с Android 12 цвета берутся из обоев, ниже применяется
-        // фирменная палитра из тем приложения.
-        DynamicColors.applyToActivitiesIfAvailable(application)
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)

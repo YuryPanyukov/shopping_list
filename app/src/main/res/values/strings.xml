@@ -31,7 +31,6 @@
     <string name="delete_list_title">Удалить список?</string>
     <string name="delete_list_message">«%1$s» будет удалён вместе со всеми товарами.</string>
     <string name="empty_lists">Пока нет ни одного списка.\nНажмите «Новый список», чтобы создать первый.</string>
-    <string name="default_list_name">Список покупок</string>
 
     <plurals name="items_count">
         <item quantity="one">%d товар</item>
@@ -55,11 +54,6 @@
 
     <!-- Поделиться списком -->
     <string name="share_list_chooser">Отправить список</string>
-    <string name="share_header">🛒 Список «%1$s»</string>
-    <string name="share_progress">Куплено %1$d из %2$d</string>
-    <string name="share_bought">✅ %1$s</string>
-    <string name="share_todo">⬜ %1$s</string>
-    <string name="share_empty_suffix">\nСписок пока пуст</string>
 
     <!-- Быстрый набор -->
     <string name="back">Назад</string>
@@ -75,7 +69,6 @@
     <!-- Товары из прошлых покупок -->
     <string name="suggest_title">Взять из прошлых покупок?</string>
     <string name="suggest_subtitle">Отметьте товары, которые покупали раньше — они добавятся в «%1$s»</string>
-    <string name="suggest_empty">Прошлых покупок пока нет — соберём подсказки после первого списка.</string>
     <string name="select_all">Выбрать все</string>
     <string name="deselect_all">Снять выбор</string>
     <string name="suggest_add">Добавить (%1$d)</string>

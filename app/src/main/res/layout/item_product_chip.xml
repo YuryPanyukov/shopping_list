@@ -8,9 +8,9 @@
     android:layout_margin="5dp"
     android:clickable="true"
     android:focusable="true"
-    android:minHeight="62dp"
+    android:minHeight="64dp"
     app:cardBackgroundColor="?attr/colorSurface"
-    app:cardCornerRadius="14dp"
+    app:cardCornerRadius="16dp"
     app:cardElevation="0dp"
     app:rippleColor="?attr/colorPrimary"
     app:strokeColor="?attr/colorOutlineVariant"
@@ -19,17 +19,17 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:minHeight="62dp"
-        android:paddingStart="12dp"
-        android:paddingTop="6dp"
-        android:paddingEnd="10dp"
-        android:paddingBottom="6dp">
+        android:minHeight="64dp"
+        android:paddingStart="14dp"
+        android:paddingTop="8dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="8dp">
 
         <TextView
             android:id="@+id/product_emoji"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="10dp"
             android:textSize="22sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -42,6 +42,7 @@
             android:layout_height="wrap_content"
             android:maxLines="2"
             android:textAppearance="?attr/textAppearanceBodyMedium"
+            android:textColor="?attr/colorOnSurface"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/product_emoji"
@@ -58,6 +59,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:tint="?attr/colorPrimary"
             tools:visibility="visible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

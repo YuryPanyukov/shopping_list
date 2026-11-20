@@ -1,9 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Палитра приложения, тёмная схема: глубокий фон, поверхности с обводкой. -->
+    <color name="primary">#FF7B9CFF</color>
+    <color name="on_primary">#FF081018</color>
+    <color name="primary_container">#FF1B2A4A</color>
+    <color name="on_primary_container">#FFD8E3FF</color>
+    <color name="secondary">#FFB98CFF</color>
+    <color name="on_secondary">#FF140B24</color>
+    <color name="secondary_container">#FF2C1F45</color>
+    <color name="on_secondary_container">#FFEBDDFF</color>
+    <color name="tertiary">#FF38D6C4</color>
+    <color name="on_tertiary">#FF00201C</color>
+    <color name="tertiary_container">#FF063A34</color>
+    <color name="on_tertiary_container">#FFB9F5EC</color>
+    <color name="error">#FFFF8A8A</color>
+    <color name="on_error">#FF2B0A0A</color>
+    <color name="error_container">#FF4E1414</color>
+    <color name="on_error_container">#FFFFDAD6</color>
+
+    <color name="background">#FF0A0C11</color>
+    <color name="on_background">#FFEEF2F7</color>
+    <color name="surface">#FF11151D</color>
+    <color name="on_surface">#FFEEF2F7</color>
+    <color name="surface_variant">#FF1A2030</color>
+    <color name="on_surface_variant">#FF98A2B3</color>
+    <color name="surface_container_lowest">#FF07090D</color>
+    <color name="surface_container_low">#FF0D1119</color>
+    <color name="surface_container">#FF121722</color>
+    <color name="surface_container_high">#FF171D2A</color>
+    <color name="surface_container_highest">#FF1D2433</color>
+    <color name="outline">#FF2A3244</color>
+    <color name="outline_variant">#FF202635</color>
+
     <!-- Крутилка -->
-    <color name="wheel_track">#33FFFFFF</color>
-    <color name="wheel_hub">#FF2A2A2E</color>
-    <color name="wheel_hub_stroke">#33FFFFFF</color>
-    <color name="wheel_text">#FFE6E1E5</color>
-    <color name="wheel_pointer">#FFE6E1E5</color>
+    <color name="wheel_track">#1AEEF2F7</color>
+    <color name="wheel_hub">#FF11151D</color>
+    <color name="wheel_hub_stroke">#FF2A3244</color>
+    <color name="wheel_text">#FFEEF2F7</color>
+    <color name="wheel_pointer">#FF7B9CFF</color>
 </resources>

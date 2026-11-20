@@ -1,49 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <!-- Палитра приложения, светлая схема.
+         Глубокие поверхности, тонкая обводка, индиго-фиолетовые акценты.
+         Тёмная схема переопределяет те же имена в values-night. -->
+    <color name="primary">#FF3B6EF6</color>
+    <color name="on_primary">#FFFFFFFF</color>
+    <color name="primary_container">#FFE4EBFF</color>
+    <color name="on_primary_container">#FF12224F</color>
+    <color name="secondary">#FF8A5CF6</color>
+    <color name="on_secondary">#FFFFFFFF</color>
+    <color name="secondary_container">#FFF1E9FF</color>
+    <color name="on_secondary_container">#FF22103F</color>
+    <color name="tertiary">#FF0E9F8A</color>
+    <color name="on_tertiary">#FFFFFFFF</color>
+    <color name="tertiary_container">#FFD6F5EF</color>
+    <color name="on_tertiary_container">#FF032B24</color>
+    <color name="error">#FFD92D20</color>
+    <color name="on_error">#FFFFFFFF</color>
+    <color name="error_container">#FFFEE4E2</color>
+    <color name="on_error_container">#FF410002</color>
 
-    <!-- Фирменная палитра (сид #2FA36B — зелёный иконки запуска). -->
-    <!-- Светлая схема -->
-    <color name="brand_primary_light">#FF1F6C4A</color>
-    <color name="brand_on_primary_light">#FFFFFFFF</color>
-    <color name="brand_primary_container_light">#FFA6F2CE</color>
-    <color name="brand_on_primary_container_light">#FF002115</color>
-    <color name="brand_secondary_light">#FF4F6357</color>
-    <color name="brand_on_secondary_light">#FFFFFFFF</color>
-    <color name="brand_secondary_container_light">#FFD1E8DA</color>
-    <color name="brand_on_secondary_container_light">#FF0C1F16</color>
-    <color name="brand_tertiary_light">#FF3C6473</color>
-    <color name="brand_on_tertiary_light">#FFFFFFFF</color>
-    <color name="brand_tertiary_container_light">#FFC1E8FB</color>
-    <color name="brand_on_tertiary_container_light">#FF001F2A</color>
-    <color name="brand_error_light">#FFBA1A1A</color>
-    <color name="brand_on_error_light">#FFFFFFFF</color>
-    <color name="brand_error_container_light">#FFFFDAD6</color>
-    <color name="brand_on_error_container_light">#FF410002</color>
-
-    <!-- Тёмная схема -->
-    <color name="brand_primary_dark">#FF8BD5B0</color>
-    <color name="brand_on_primary_dark">#FF003827</color>
-    <color name="brand_primary_container_dark">#FF005238</color>
-    <color name="brand_on_primary_container_dark">#FFA6F2CE</color>
-    <color name="brand_secondary_dark">#FFB5CCC0</color>
-    <color name="brand_on_secondary_dark">#FF213529</color>
-    <color name="brand_secondary_container_dark">#FF374B3F</color>
-    <color name="brand_on_secondary_container_dark">#FFD1E8DA</color>
-    <color name="brand_tertiary_dark">#FFA4CDDE</color>
-    <color name="brand_on_tertiary_dark">#FF0F1F28</color>
-    <color name="brand_tertiary_container_dark">#FF334B58</color>
-    <color name="brand_on_tertiary_container_dark">#FFC1E8FB</color>
-    <color name="brand_error_dark">#FFFFB4AB</color>
-    <color name="brand_on_error_dark">#FF690005</color>
-    <color name="brand_error_container_dark">#FF93000A</color>
-    <color name="brand_on_error_container_dark">#FFFFDAD6</color>
+    <color name="background">#FFF5F7FB</color>
+    <color name="on_background">#FF101828</color>
+    <color name="surface">#FFFFFFFF</color>
+    <color name="on_surface">#FF101828</color>
+    <color name="surface_variant">#FFEEF1F7</color>
+    <color name="on_surface_variant">#FF667085</color>
+    <color name="surface_container_lowest">#FFFFFFFF</color>
+    <color name="surface_container_low">#FFFBFCFE</color>
+    <color name="surface_container">#FFF2F5FA</color>
+    <color name="surface_container_high">#FFEDF1F7</color>
+    <color name="surface_container_highest">#FFE7ECF4</color>
+    <color name="outline">#FFD5DBE7</color>
+    <color name="outline_variant">#FFE4E8F0</color>
 
     <!-- Крутилка -->
-    <color name="wheel_track">#1A000000</color>
-    <color name="wheel_hub">#FFFDFCFF</color>
-    <color name="wheel_hub_stroke">#22000000</color>
-    <color name="wheel_text">#FF1C1B1F</color>
-    <color name="wheel_pointer">#FF1C1B1F</color>
+    <color name="wheel_track">#1A101828</color>
+    <color name="wheel_hub">#FFFFFFFF</color>
+    <color name="wheel_hub_stroke">#FFE4E8F0</color>
+    <color name="wheel_text">#FF101828</color>
+    <color name="wheel_pointer">#FF3B6EF6</color>
+
+    <!-- Индикатор обучающих слайдов -->
+    <color name="dot_active">#FF7B9CFF</color>
+    <color name="dot_inactive">#4DEEF2F7</color>
+    <color name="onboarding_muted">#FF98A2B3</color>
 </resources>

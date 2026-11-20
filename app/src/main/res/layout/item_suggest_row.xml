@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -8,7 +7,7 @@
     android:clickable="true"
     android:focusable="true"
     android:gravity="center_vertical"
-    android:minHeight="52dp"
+    android:minHeight="56dp"
     android:orientation="horizontal"
     android:paddingStart="4dp"
     android:paddingEnd="12dp">
@@ -36,6 +35,7 @@
         android:ellipsize="end"
         android:maxLines="1"
         android:textAppearance="?attr/textAppearanceBodyLarge"
+        android:textColor="?attr/colorOnSurface"
         tools:text="Бананы" />
 
     <TextView
@@ -44,7 +44,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:textAppearance="?attr/textAppearanceLabelMedium"
-        android:textColor="?android:attr/textColorSecondary"
+        android:textColor="?attr/colorOnSurfaceVariant"
         tools:text="×3" />
 
 </LinearLayout>

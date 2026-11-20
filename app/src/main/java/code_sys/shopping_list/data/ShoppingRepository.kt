@@ -5,10 +5,7 @@ import android.content.SharedPreferences
 import org.json.JSONArray
 import org.json.JSONObject
 
-/**
- * Простое хранилище списков покупок: SharedPreferences + JSON.
- * Данных мало (десятки записей), поэтому сохраняем синхронно.
- */
+/** Хранилище списков покупок: SharedPreferences + JSON. */
 object ShoppingRepository {
 
     internal const val PREFS_NAME = "shopping_lists_store"
@@ -25,10 +22,7 @@ object ShoppingRepository {
         cache.addAll(readLists(store.getString(KEY_LISTS, null)))
     }
 
-    /**
-     * Забывает кеш и привязку к хранилищу: следующий [init] перечитает данные заново.
-     * Так тесты проверяют, что данные действительно дошли до диска, а не остались в памяти.
-     */
+    /** Сбрасывает кеш и привязку к хранилищу: следующий [init] перечитает данные. */
     internal fun reset() {
         prefs = null
         cache.clear()

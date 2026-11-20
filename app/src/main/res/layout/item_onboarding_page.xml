@@ -16,18 +16,19 @@
 
         <ImageView
             android:id="@+id/illustration"
-            android:layout_width="144dp"
-            android:layout_height="144dp"
-            android:layout_marginTop="64dp"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_marginTop="56dp"
+            android:contentDescription="@null"
             android:importantForAccessibility="no"
-            app:tint="@android:color/white"
+            app:tint="@color/primary"
             tools:src="@drawable/ic_checklist" />
 
         <TextView
             android:id="@+id/title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="32dp"
             android:gravity="center"
             android:textAppearance="?attr/textAppearanceHeadlineSmall"
             android:textColor="@android:color/white"
@@ -39,9 +40,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
             android:gravity="center"
-            android:alpha="0.85"
             android:textAppearance="?attr/textAppearanceBodyLarge"
-            android:textColor="@android:color/white"
+            android:textColor="@color/onboarding_muted"
             tools:text="Создавайте отдельные списки и отмечайте, что уже куплено." />
     </LinearLayout>
 </ScrollView>
