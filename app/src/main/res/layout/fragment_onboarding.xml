@@ -32,19 +32,41 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/button_skip" />
 
-    <com.google.android.material.tabs.TabLayout
+    <LinearLayout
         android:id="@+id/dots"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@id/button_next"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:tabBackground="@drawable/dot_indicator_selector"
-        app:tabGravity="center"
-        app:tabIndicatorHeight="0dp"
-        app:tabPadding="8dp"
-        app:tabRippleColor="@android:color/transparent" />
+        app:layout_constraintStart_toStartOf="parent">
+
+        <View
+            android:id="@+id/dot_one"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/dot_active" />
+
+        <View
+            android:id="@+id/dot_two"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/dot_inactive" />
+
+        <View
+            android:id="@+id/dot_three"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/dot_inactive" />
+    </LinearLayout>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_next"

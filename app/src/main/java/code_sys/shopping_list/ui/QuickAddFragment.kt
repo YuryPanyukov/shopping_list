@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.android.material.snackbar.Snackbar
+import code_sys.shopping_list.MainActivity
 import code_sys.shopping_list.R
 import code_sys.shopping_list.data.Category
 import code_sys.shopping_list.data.ListItem
@@ -57,6 +58,8 @@ class QuickAddFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // У экрана своя шапка с хлебными крошками — панель действий не нужна.
+        (activity as? MainActivity)?.setToolbarVisible(false)
         listId = requireArguments().getString(NavArgs.LIST_ID)
         if (ShoppingRepository.list(listId) == null) {
             findNavController().popBackStack()
@@ -68,7 +71,9 @@ class QuickAddFragment : Fragment() {
         binding.productsRecycler.adapter = adapter
 
         binding.wheel.onSelectionChanged = { index -> onWheelSelection(index) }
-        binding.buttonBack.setOnClickListener { goBack() }
+        binding.buttonBack.setOnClickListener {
+            if (!goBack()) findNavController().popBackStack()
+        }
         binding.buttonDone.setOnClickListener { findNavController().popBackStack() }
 
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, backCallback)
@@ -86,7 +91,7 @@ class QuickAddFragment : Fragment() {
 
         binding.breadcrumb.text = getString(R.string.title_quick_add)
         binding.hint.setText(R.string.hint_choose_zone)
-        binding.buttonBack.isVisible = false
+        binding.buttonBack.isVisible = true
         binding.wheel.isVisible = true
         binding.productsRecycler.isVisible = false
 

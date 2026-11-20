@@ -38,4 +38,9 @@
     <color name="wheel_hub_stroke">#FF2A3244</color>
     <color name="wheel_text">#FFEEF2F7</color>
     <color name="wheel_pointer">#FF7B9CFF</color>
+
+    <!-- Фирменные акценты: знак приложения и свечение шапки -->
+    <color name="brand_tile_start">#FF6C8CFF</color>
+    <color name="brand_tile_end">#FFB98CFF</color>
+    <color name="hero_glow">#661B2A4A</color>
 </resources>

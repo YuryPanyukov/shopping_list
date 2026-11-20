@@ -56,6 +56,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /** Экраны со своей шапкой прячут панель действий, чтобы не дублировать заголовок. */
+    fun setToolbarVisible(visible: Boolean) {
+        if (visible) supportActionBar?.show() else supportActionBar?.hide()
+    }
+
     override fun onSupportNavigateUp(): Boolean =
         navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
 }

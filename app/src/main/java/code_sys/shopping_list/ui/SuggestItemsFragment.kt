@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import code_sys.shopping_list.MainActivity
 import code_sys.shopping_list.R
 import code_sys.shopping_list.data.ListItem
 import code_sys.shopping_list.data.ShoppingRepository
@@ -37,6 +38,7 @@ class SuggestItemsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        (activity as? MainActivity)?.setToolbarVisible(true)
         listId = requireArguments().getString(NavArgs.LIST_ID)
         val list = ShoppingRepository.list(listId)
         if (list == null) {

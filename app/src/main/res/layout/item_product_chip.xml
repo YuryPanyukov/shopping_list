@@ -40,11 +40,12 @@
             android:id="@+id/product_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="6dp"
             android:maxLines="2"
             android:textAppearance="?attr/textAppearanceBodyMedium"
             android:textColor="?attr/colorOnSurface"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/product_added"
             app:layout_constraintStart_toEndOf="@id/product_emoji"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Бананы" />

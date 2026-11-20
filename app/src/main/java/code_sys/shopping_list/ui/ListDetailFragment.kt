@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
+import code_sys.shopping_list.MainActivity
 import code_sys.shopping_list.R
 import code_sys.shopping_list.data.ListItem
 import code_sys.shopping_list.data.ProductCatalog
@@ -73,6 +74,7 @@ class ListDetailFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
+        (activity as? MainActivity)?.setToolbarVisible(true)
         refresh()
     }
 

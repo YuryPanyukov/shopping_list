@@ -41,6 +41,11 @@
     <color name="wheel_text">#FF101828</color>
     <color name="wheel_pointer">#FF3B6EF6</color>
 
+    <!-- Фирменные акценты: знак приложения и свечение шапки -->
+    <color name="brand_tile_start">#FF6C8CFF</color>
+    <color name="brand_tile_end">#FFB98CFF</color>
+    <color name="hero_glow">#99E4EBFF</color>
+
     <!-- Индикатор обучающих слайдов -->
     <color name="dot_active">#FF7B9CFF</color>
     <color name="dot_inactive">#4DEEF2F7</color>

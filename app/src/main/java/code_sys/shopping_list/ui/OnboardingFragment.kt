@@ -11,7 +11,6 @@ import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
-import com.google.android.material.tabs.TabLayoutMediator
 import code_sys.shopping_list.R
 import code_sys.shopping_list.databinding.FragmentOnboardingBinding
 import code_sys.shopping_list.databinding.ItemOnboardingPageBinding
@@ -49,9 +48,7 @@ class OnboardingFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.pager.adapter = OnboardingPagerAdapter(this)
-        TabLayoutMediator(binding.dots, binding.pager) { _, _ ->
-            // Таб не имеет текста и работает просто точкой-индикатором.
-        }.attach()
+        updateDots(0)
 
         binding.buttonSkip.setOnClickListener { finishOnboarding() }
         binding.buttonNext.setOnClickListener {
@@ -69,6 +66,7 @@ class OnboardingFragment : Fragment() {
                 binding.buttonNext.setText(
                     if (position == SLIDES.size - 1) R.string.onboarding_start else R.string.onboarding_next
                 )
+                updateDots(position)
             }
         })
     }
@@ -82,6 +80,16 @@ class OnboardingFragment : Fragment() {
     override fun onPause() {
         (activity as? AppCompatActivity)?.supportActionBar?.show()
         super.onPause()
+    }
+
+    /** Точка текущего слайда — акцентная, остальные приглушены. */
+    private fun updateDots(position: Int) {
+        val dots = listOf(binding.dotOne, binding.dotTwo, binding.dotThree)
+        dots.forEachIndexed { index, dot ->
+            dot.setBackgroundResource(
+                if (index == position) R.drawable.dot_active else R.drawable.dot_inactive
+            )
+        }
     }
 
     /** Помечает обучение пройденным и открывает главный экран. */

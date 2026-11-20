@@ -24,8 +24,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:textAppearance="?attr/textAppearanceLabelLarge"
-            android:textColor="?attr/colorOnSurfaceVariant"
+            android:textAppearance="@style/TextAppearance.Shopping_list.Eyebrow"
             tools:text="Куплено 3 из 7" />
 
         <com.google.android.material.button.MaterialButton

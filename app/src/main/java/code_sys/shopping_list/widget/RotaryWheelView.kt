@@ -15,6 +15,8 @@ import android.view.View
 import android.view.ViewConfiguration
 import android.view.animation.DecelerateInterpolator
 import androidx.core.content.ContextCompat
+import androidx.core.graphics.ColorUtils
+import com.google.android.material.color.MaterialColors
 import code_sys.shopping_list.R
 import kotlin.math.atan2
 import kotlin.math.floor
@@ -59,6 +61,10 @@ class RotaryWheelView @JvmOverloads constructor(
         style = Paint.Style.STROKE
         color = ContextCompat.getColor(context, R.color.wheel_track)
     }
+    private val onSurfaceColor = MaterialColors.getColor(
+        this,
+        com.google.android.material.R.attr.colorOnSurface
+    )
     private val sectorPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply { style = Paint.Style.STROKE }
     private val hubPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
         style = Paint.Style.FILL
@@ -136,11 +142,11 @@ class RotaryWheelView @JvmOverloads constructor(
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        // По ширине занимаем всё доступное место, а высота равна диаметру колеса:
-        // так круг рисуется по центру экрана, а не прижимается к левому краю.
+        // Колесо квадратное и занимает всю доступную ширину: так круг не
+        // сжимается и не прижимается к краю на широких экранах.
         val preferred = dp(280f).roundToInt()
         val width = resolveSize(preferred, widthMeasureSpec).coerceAtLeast(dp(160f).roundToInt())
-        val height = resolveSize(preferred, heightMeasureSpec).coerceAtMost(width)
+        val height = resolveSize(width, heightMeasureSpec)
         setMeasuredDimension(width, height)
     }
 
@@ -174,8 +180,13 @@ class RotaryWheelView @JvmOverloads constructor(
 
             sectorPaint.color = segment.color
             sectorPaint.alpha = if (isPreview) 255 else 110
-            // На приглушённом секторе читается белый, на активном — контрастный.
-            sectorLabelPaint.color = if (isPreview) readableOn(segment.color) else 0xFFFFFFFF.toInt()
+            // Приглушённые сектора полупрозрачны: белый текст на них пропадал
+            // в светлой теме, поэтому там берём цвет текста из темы.
+            sectorLabelPaint.color = if (isPreview) {
+                labelColorOn(segment.color)
+            } else {
+                onSurfaceColor
+            }
             sectorPaint.strokeWidth = if (isPreview) bandWidth else bandWidth * 0.76f
             val radius = if (isPreview) midRadius else midRadius + bandWidth * 0.05f
             arcRect.set(centerX - radius, centerY - radius, centerX + radius, centerY + radius)
@@ -185,35 +196,35 @@ class RotaryWheelView @JvmOverloads constructor(
 
             val midAngle = startAngle + sweep / 2f
             val arcLength = (2f * Math.PI.toFloat() * radius) / count
-            canvas.save()
-            canvas.rotate(midAngle + 90f, centerX, centerY)
+            val midRad = Math.toRadians(midAngle.toDouble())
+            val dirX = kotlin.math.cos(midRad).toFloat()
+            val dirY = kotlin.math.sin(midRad).toFloat()
 
-            // Эмодзи — у внешнего края сектора.
-            centerEmojiPaint.typeface = android.graphics.Typeface.DEFAULT
-            sectorEmojiPaint.textSize = sp(15f)
-            val emojiRadius = innerRadius + bandWidth * 0.72f
-            canvas.drawText(
-                segment.emoji,
-                centerX,
-                centerY - emojiRadius - verticalCenterOffset(sectorEmojiPaint),
-                sectorEmojiPaint
-            )
-
-            // Подпись — ближе к центру, сжимаем шрифт под ширину сектора.
+            // Подписи рисуем горизонтально: у радиальных подписей правые
+            // сектора читались перевёрнутыми относительно соседних.
             sectorLabelPaint.textSize = sp(12f)
+            val labelRadius = innerRadius + bandWidth * 0.55f
+            val labelX = centerX + dirX * labelRadius
+            val labelBaseline = centerY + dirY * labelRadius - verticalCenterOffset(sectorLabelPaint)
+
+            // Ширину подписи ограничиваем толщиной полосы: иначе длинное
+            // название на левом/правом секторе уходило под ступицу.
             val textWidth = sectorLabelPaint.measureText(segment.label)
-            val maxWidth = arcLength * 0.86f
+            val maxWidth = min(arcLength * 0.9f, bandWidth - dp(16f))
             if (textWidth > maxWidth && textWidth > 0f) {
                 sectorLabelPaint.textSize = (sp(12f) * maxWidth / textWidth).coerceAtLeast(sp(8f))
             }
-            val labelRadius = innerRadius + bandWidth * 0.34f
+
+            // Эмодзи — над подписью, чтобы на боковых секторах они не сталкивались.
+            centerEmojiPaint.typeface = android.graphics.Typeface.DEFAULT
+            sectorEmojiPaint.textSize = sp(15f)
             canvas.drawText(
-                segment.label,
-                centerX,
-                centerY - labelRadius - verticalCenterOffset(sectorLabelPaint),
-                sectorLabelPaint
+                segment.emoji,
+                labelX,
+                labelBaseline - (lineHeight(sectorLabelPaint) + lineHeight(sectorEmojiPaint)) / 2f - dp(1f),
+                sectorEmojiPaint
             )
-            canvas.restore()
+            canvas.drawText(segment.label, labelX, labelBaseline, sectorLabelPaint)
         }
 
         // Ступица с крупной подписью выбранного сектора.
@@ -391,12 +402,14 @@ class RotaryWheelView @JvmOverloads constructor(
     }
 
     /** Тёмный текст на светлом секторе, белый — на насыщенном. */
-    private fun readableOn(color: Int): Int =
-        if (androidx.core.graphics.ColorUtils.calculateLuminance(color) > 0.45f) {
-            0xFF101828.toInt()
+    private fun labelColorOn(background: Int): Int {
+        val white = 0xFFFFFFFF.toInt()
+        return if (ColorUtils.calculateContrast(white, background) >= 3.0) {
+            white
         } else {
-            0xFFFFFFFF.toInt()
+            0xFF101828.toInt()
         }
+    }
 
     private fun lineHeight(paint: Paint): Float = paint.fontMetrics.let { it.descent - it.ascent }
 
